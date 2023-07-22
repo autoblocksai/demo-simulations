@@ -1,0 +1,70 @@
+name: Autoblocks Replays
+
+on:
+  push:
+    branches-ignore:
+      - main
+
+permissions:
+  # This workflow needs to be given contents write permission since it creates branches and commits files
+  contents: write
+  # This workflow needs to be given pull requests write permission since it comments on pull requests
+  pull-requests: write
+
+env:
+  POETRY_VERSION: 1.5.1
+  PYTHON_VERSION: 3.11
+
+  AUTOBLOCKS_REPLAYS_ENABLED: "true"
+
+jobs:
+  autoblocks-replays:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python ${{ env.PYTHON_VERSION }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install poetry
+        run: curl -sSL https://install.python-poetry.org | python3 -
+
+      - name: Install dependencies
+        run: poetry install
+
+      - name: Start the app
+        run: poetry run start &
+        env:
+          OPENAI_API_KEY: ${{ secrets.DEMO_OPENAI_API_KEY }}
+
+      - name: Wait for the app to be ready
+        run: |
+          while [[ "$(curl -s -o /dev/null -w ''%{http_code}'' http://localhost:5000/health)" != "200" ]]; do sleep 1; done
+
+      - name: Run Autoblocks replays
+        uses: autoblocksai/actions/replay@default-replays-filepath
+        with:
+          # Replay entrypoint settings
+          replay-method: POST
+          replay-url: http://localhost:5000
+
+          # Autoblocks replay view settings
+          replay-view-id: clkeamsei0001l908cmjjtqrf
+          replay-num-traces: 1
+
+          # Configuration for filtering and transforming events for replay
+          replay-transform-config: |
+            filters:
+              message: request.payload
+            mappers:
+              query: properties.payload.query
+              __autoblocks_replay_trace_id: traceId
+
+          # Autoblocks API key
+          autoblocks-api-key: ${{ secrets.DEMO_AUTOBLOCKS_API_KEY }}
+
+          # GitHub token
+          github-token: ${{ secrets.GITHUB_TOKEN }}
