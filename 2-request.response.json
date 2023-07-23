@@ -1,0 +1,9 @@
+{
+  "message": "request.response",
+  "properties": {
+    "response": {
+      "output": "No airport codes found."
+    },
+    "source": "DEMO_REPLAYS"
+  }
+}
