@@ -1,0 +1,42 @@
+{
+  "message": "chat.completion",
+  "properties": {
+    "payload": {
+      "messages": [
+        {
+          "content": "You will be provided with a text, and your task is to extract the airport codes from it. Return ONLY the airport codes.",
+          "role": "system"
+        },
+        {
+          "content": "What are all of the airports in London?",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-3.5-turbo",
+      "temperature": "0"
+    },
+    "provider": "openai",
+    "response": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": "0",
+          "message": {
+            "content": "I'm sorry, I cannot provide a list of all airports in London. However, some of the major airports in London include Heathrow Airport (LHR), Gatwick Airport (LGW), London City Airport (LCY), Stansted Airport (STN), and Luton Airport (LTN).",
+            "role": "assistant"
+          }
+        }
+      ],
+      "created": "1690119312",
+      "id": "chatcmpl-7fTWqnIKSPVeGsrspJmPaIF1uPm4X",
+      "model": "gpt-3.5-turbo-0613",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": "62",
+        "prompt_tokens": "46",
+        "total_tokens": "108"
+      }
+    },
+    "source": "DEMO_REPLAYS"
+  }
+}
