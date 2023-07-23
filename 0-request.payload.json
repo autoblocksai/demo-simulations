@@ -2,6 +2,7 @@
   "message": "request.payload",
   "properties": {
     "payload": {
+      "__autoblocks_replay_trace_id": "55813132-400e-470c-91b5-d33e9cd2eaa4",
       "query": "I had an amazing trip in Maui!"
     },
     "source": "DEMO_REPLAYS"
