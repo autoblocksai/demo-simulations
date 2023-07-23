@@ -1,0 +1,9 @@
+{
+  "message": "request.payload",
+  "properties": {
+    "payload": {
+      "query": "What are all of the airports in London?"
+    },
+    "source": "DEMO_REPLAYS"
+  }
+}
