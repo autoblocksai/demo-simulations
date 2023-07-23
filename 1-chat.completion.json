@@ -1,0 +1,42 @@
+{
+  "message": "chat.completion",
+  "properties": {
+    "payload": {
+      "messages": [
+        {
+          "content": "You will be provided with a text, and your task is to extract the airport codes from it. Return ONLY the airport codes.",
+          "role": "system"
+        },
+        {
+          "content": "I had an amazing trip in Maui!",
+          "role": "user"
+        }
+      ],
+      "model": "gpt-3.5-turbo",
+      "temperature": "0"
+    },
+    "provider": "openai",
+    "response": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": "0",
+          "message": {
+            "content": "No airport codes found.",
+            "role": "assistant"
+          }
+        }
+      ],
+      "created": "1690121410",
+      "id": "chatcmpl-7fU4gVr05HBqkxgcY3ssqhPjXqF6Y",
+      "model": "gpt-3.5-turbo-0613",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": "5",
+        "prompt_tokens": "45",
+        "total_tokens": "50"
+      }
+    },
+    "source": "DEMO_REPLAYS"
+  }
+}
