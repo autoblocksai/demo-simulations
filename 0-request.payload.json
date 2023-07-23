@@ -2,6 +2,7 @@
   "message": "request.payload",
   "properties": {
     "payload": {
+      "__autoblocks_replay_trace_id": "7cb3ec98-b320-4e62-9a51-b15d0218ae4c",
       "query": "What are all of the airports in London?"
     },
     "source": "DEMO_REPLAYS"
