@@ -2,7 +2,7 @@
   "message": "request.response",
   "properties": {
     "response": {
-      "output": "No airport codes found."
+      "output": "That's wonderful to hear! Maui is known for its stunning beaches, beautiful landscapes, and vibrant culture. What were some of the highlights of your trip?"
     },
     "source": "DEMO_REPLAYS"
   }
