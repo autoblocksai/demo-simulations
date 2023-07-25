@@ -17,9 +17,7 @@ export AUTOBLOCKS_API_KEY=my-api-key
 Then replay traces from a view:
 
 ```bash
-poetry run replay \
-  --view-id clkeamsei0001l908cmjjtqrf \
-  --num-traces 3
+poetry run replay --view-id clkeamsei0001l908cmjjtqrf --num-traces 3
 ```
 
 ```
