@@ -2,7 +2,7 @@
   "message": "request.response",
   "properties": {
     "response": {
-      "output": "I'm sorry, I cannot provide a list of all airports in London. However, some of the major airports in London include Heathrow Airport (LHR), Gatwick Airport (LGW), London City Airport (LCY), Stansted Airport (STN), and Luton Airport (LTN)."
+      "output": "There are several airports in London. Some of the major ones include Heathrow Airport and London Stansted Airport."
     },
     "source": "DEMO_REPLAYS"
   }
