@@ -12,8 +12,8 @@ permissions:
   pull-requests: write
 
 env:
-  POETRY_VERSION: 1.5.1
-  PYTHON_VERSION: 3.11
+  POETRY_VERSION: "1.5.1"
+  PYTHON_VERSION: "3.11"
 
   AUTOBLOCKS_REPLAYS_ENABLED: "true"
 
@@ -33,11 +33,15 @@ jobs:
         run: curl -sSL https://install.python-poetry.org | python3 -
 
       - name: Install dependencies
-        run: poetry install
-        env:
-          # Temporary while the SDK is not published
-          POETRY_HTTP_BASIC_GIT_AUTOBLOCKSAI_PYTHON_SDK_USERNAME: nicolewhite
-          POETRY_HTTP_BASIC_GIT_AUTOBLOCKSAI_PYTHON_SDK_PASSWORD: ${{ secrets.NICOLES_GITHUB_TOKEN_DO_NOT_USE }}
+        run: |
+          poetry config virtualenvs.create true
+          poetry config virtualenvs.in-project true
+          poetry install
+
+      - name: Install Autoblocks SDK
+        run: |
+          source ${{ github.workspace }}/.venv/bin/activate
+          pip install git+https://nicolewhite:${{ secrets.NICOLES_GITHUB_TOKEN_DO_NOT_USE}}@github.com/autoblocksai/python-sdk.git@v0
 
       - name: Start the app
         run: poetry run start &
