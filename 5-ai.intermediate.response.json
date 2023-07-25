@@ -1,0 +1,27 @@
+{
+  "message": "ai.intermediate.response",
+  "properties": {
+    "response": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": "0",
+          "message": {
+            "content": "That's wonderful to hear! Maui is known for its stunning beaches, beautiful landscapes, and vibrant culture. What were some of the highlights of your trip?",
+            "role": "assistant"
+          }
+        }
+      ],
+      "created": "1690320156",
+      "id": "chatcmpl-7gJmGdZNftEfV03g7YtLwIYFg6NSO",
+      "model": "gpt-3.5-turbo-0613",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": "31",
+        "prompt_tokens": "25",
+        "total_tokens": "56"
+      }
+    },
+    "source": "DEMO_REPLAYS"
+  }
+}
