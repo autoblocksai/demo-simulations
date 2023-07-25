@@ -1,0 +1,9 @@
+{
+  "message": "request.payload",
+  "properties": {
+    "payload": {
+      "query": "I had an amazing trip in Maui!"
+    },
+    "source": "DEMO_REPLAYS"
+  }
+}
