@@ -34,6 +34,10 @@ jobs:
 
       - name: Install dependencies
         run: poetry install
+        env:
+          # Temporary while the SDK is not published
+          POETRY_HTTP_BASIC_GIT_AUTOBLOCKSAI_PYTHON_SDK_USERNAME: nicolewhite
+          POETRY_HTTP_BASIC_GIT_AUTOBLOCKSAI_PYTHON_SDK_PASSWORD: ${{ secrets.NICOLES_GITHUB_TOKEN_DO_NOT_USE }}
 
       - name: Start the app
         run: poetry run start &

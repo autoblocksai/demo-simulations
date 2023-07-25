@@ -12,6 +12,24 @@ files = [
 ]
 
 [[package]]
+name = "autoblocksai"
+version = "0.1.0"
+description = ""
+optional = false
+python-versions = "^3.8"
+files = []
+develop = false
+
+[package.dependencies]
+requests = "^2.0.0"
+
+[package.source]
+type = "git"
+url = "https://github.com/autoblocksai/python-sdk.git"
+reference = "v0"
+resolved_reference = "03a8287994dbfda75058d2c31e5714b0f7d27e9c"
+
+[[package]]
 name = "blinker"
 version = "1.6.2"
 description = "Fast, simple object-to-object and broadcast signaling"
@@ -675,4 +693,4 @@ watchdog = ["watchdog (>=2.3)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "2c0447d0cb8cde82202b49f89fb27942fbea0189028862f3a6fd3aa3043c7d8c"
+content-hash = "ad2c933d06237d25cd4b8cd6692f1b25d5eed62c8b9a3196c43b0839d5fbfbcb"

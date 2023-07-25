@@ -1,7 +1,7 @@
 import requests
+from autoblocks.tracer import AutoblocksTracer
 
-from demo_replays.autoblocks_sdk import AutoblocksLogger
-from demo_replays.settings import settings
+from demo_replays.settings import env
 
 PROVIDER = "openai"
 MODEL = "gpt-3.5-turbo"
@@ -12,7 +12,7 @@ PROMPT = (
 )
 
 
-def get_response(autoblocks: AutoblocksLogger, query: str) -> str:
+def get_response(autoblocks: AutoblocksTracer, query: str) -> str:
     payload = {
         "model": MODEL,
         "messages": [
@@ -31,7 +31,7 @@ def get_response(autoblocks: AutoblocksLogger, query: str) -> str:
     req = requests.post(
         "https://api.openai.com/v1/chat/completions",
         json=payload,
-        headers={"Authorization": f"Bearer {settings.OPENAI_API_KEY}"},
+        headers={"Authorization": f"Bearer {env.OPENAI_API_KEY}"},
         timeout=10,
     )
     req.raise_for_status()
@@ -39,11 +39,11 @@ def get_response(autoblocks: AutoblocksLogger, query: str) -> str:
 
     autoblocks.send_event(
         "chat.completion",
-        {
-            "provider": PROVIDER,
-            "payload": payload,
-            "response": response,
-        },
+        properties=dict(
+            provider=PROVIDER,
+            payload=payload,
+            response=response,
+        ),
     )
 
     return response["choices"][0]["message"]["content"]
