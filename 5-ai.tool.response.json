@@ -1,11 +1,11 @@
 {
   "message": "ai.tool.response",
   "properties": {
-    "context": "List of highest points of European countries, List of elevation extremes by country, List of highest mountains on Earth",
+    "context": "List of elevation extremes by country, List of highest points of European countries, List of highest mountains on Earth",
     "source": "DEMO_REPLAYS",
     "titles": [
-      "List of highest points of European countries",
       "List of elevation extremes by country",
+      "List of highest points of European countries",
       "List of highest mountains on Earth"
     ]
   }
