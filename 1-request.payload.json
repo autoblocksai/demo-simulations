@@ -1,0 +1,9 @@
+{
+  "message": "request.payload",
+  "properties": {
+    "payload": {
+      "query": "San Francisco tourist attractions"
+    },
+    "source": "DEMO_REPLAYS"
+  }
+}
