@@ -1,0 +1,7 @@
+{
+  "message": "ai.tool.selected",
+  "properties": {
+    "source": "DEMO_REPLAYS",
+    "tool_name": "search"
+  }
+}
