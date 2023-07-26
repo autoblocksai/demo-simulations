@@ -1,0 +1,9 @@
+{
+  "message": "request.payload",
+  "properties": {
+    "payload": {
+      "query": "Highest points in the world"
+    },
+    "source": "DEMO_REPLAYS"
+  }
+}
