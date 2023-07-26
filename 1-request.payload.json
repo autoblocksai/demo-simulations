@@ -2,6 +2,7 @@
   "message": "request.payload",
   "properties": {
     "payload": {
+      "__autoblocks_replay_trace_id": "a99158bf-5b7a-430e-a6d2-b9ee8c29d431",
       "query": "Recent events involving submarines"
     },
     "source": "DEMO_REPLAYS"
