@@ -10,7 +10,7 @@ def get_response(autoblocks: AutoblocksTracer, query: str) -> str:
     ai = AIChat(
         api_key=env.OPENAI_API_KEY,
         model="gpt-3.5-turbo",
-        params=dict(temperature=0, max_tokens=100),
+        params=dict(temperature=0.5, max_tokens=100),
         console=False,
     )
 
