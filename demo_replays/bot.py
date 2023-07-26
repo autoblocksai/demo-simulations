@@ -53,7 +53,7 @@ def get_response(autoblocks: AutoblocksTracer, query: str) -> str:
         return response
 
     def lookup(q: str):
-        """Lookup more information about a topic."""
+        """Look up more information about a topic."""
         autoblocks.send_event(
             "ai.tool.selected",
             properties=dict(tool_name="lookup"),
