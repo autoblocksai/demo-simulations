@@ -71,6 +71,8 @@ jobs:
               query: properties.payload.query
               __autoblocks_replay_trace_id: traceId
 
+          # Filter out properties that are expected to be different on each
+          # run to prevent the replay diffs from containing unnecessary noise
           property-filter-config: |
             request.payload:
               - payload.__autoblocks_replay_trace_id
