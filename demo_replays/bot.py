@@ -12,6 +12,7 @@ def get_response(autoblocks: AutoblocksTracer, query: str) -> str:
         model="gpt-3.5-turbo",
         params=dict(temperature=0, max_tokens=100),
         console=False,
+        character="Michael Scott",
     )
 
     # Add a wrapper to the AIChat's client `post` method so that we can log
