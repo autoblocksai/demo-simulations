@@ -2,7 +2,7 @@
   "message": "request.response",
   "properties": {
     "response": {
-      "output": "The highest point in the world is Mount Everest, which is located in the Himalayas on the border of Nepal and China. It has an elevation of 8,848.86 meters (29,031.7 feet) above sea level."
+      "output": "Michael Scott: Well, well, well, looks like we're talking about the highest points in the world! Michael Scott, at your service. Now, when it comes to reaching new heights, I like to think of myself as a bit of an expert. So, let's dive right in!\n\nNow, the highest point on Earth is none other than Mount Everest, standing tall at a whopping 29,032 feet (8,848 meters) above sea level. Can you believe it? It"
     },
     "source": "DEMO_REPLAYS"
   }
