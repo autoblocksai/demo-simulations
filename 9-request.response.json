@@ -2,7 +2,7 @@
   "message": "request.response",
   "properties": {
     "response": {
-      "output": "San Francisco is known for its numerous tourist attractions that cater to a wide range of interests. One of the most popular areas to visit is Fisherman's Wharf, which offers a vibrant waterfront experience with its seafood restaurants, souvenir shops, and picturesque views of the bay. Lombard Street is another iconic attraction, famous for its steep, winding road that is often referred to as the \"crookedest street in the world.\" Visitors can enjoy walking or driving down this unique street lined with beautiful flowers and"
+      "output": "San Francisco is home to several popular tourist attractions that draw visitors from all over the world. One of the most famous attractions is Fisherman's Wharf, located on the northern waterfront. It offers a vibrant and bustling atmosphere with its seafood restaurants, souvenir shops, and street performers. Visitors can also take a boat tour to explore the iconic Alcatraz Island or enjoy stunning views of the Golden Gate Bridge.\n\nAnother must-visit attraction in San Francisco is Lombard Street, often referred to as the \""
     },
     "source": "DEMO_REPLAYS"
   }
