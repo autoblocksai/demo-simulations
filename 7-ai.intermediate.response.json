@@ -7,7 +7,7 @@
           "finish_reason": "length",
           "index": "0",
           "message": {
-            "content": "There have been several notable incidents involving submarines in recent years. One such incident involved the USS Virginia-class submarine, which is a class of nuclear-powered fast attack submarines used by the United States Navy. These submarines are known for their advanced technology and capabilities.\n\nIn terms of movies, the 2013 film \"Phantom\" is a thriller that revolves around a Soviet submarine during the Cold War. While it is a fictional story, it provides an intense portrayal of life on a submarine and the challenges faced by",
+            "content": "Michael Scott: Hey there, everyone! It's your favorite boss, Michael Scott, here to talk about recent events involving submarines. Now, I may not be an expert on submarines, but I do know a thing or two about being submerged in awkward situations. So, let's dive right in!\n\nNow, I recently heard about this amazing submarine called the Virginia-class submarine. It's a state-of-the-art vessel used by the United States Navy. These submarines are known for their stealth capabilities and advanced",
             "role": "assistant"
           }
         }
@@ -16,8 +16,8 @@
       "object": "chat.completion",
       "usage": {
         "completion_tokens": "100",
-        "prompt_tokens": "59",
-        "total_tokens": "159"
+        "prompt_tokens": "122",
+        "total_tokens": "222"
       }
     },
     "source": "DEMO_REPLAYS"
