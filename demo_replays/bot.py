@@ -53,7 +53,11 @@ def get_response(autoblocks: AutoblocksTracer, query: str) -> str:
         return response
 
     def lookup(q: str):
-        """Look up more information about a topic."""
+        """
+        Look up more information about a topic.
+
+        TODO(nicole): Should we try increasing the number of sentences here?
+        """
         autoblocks.send_event(
             "ai.tool.selected",
             properties=dict(tool_name="lookup"),
