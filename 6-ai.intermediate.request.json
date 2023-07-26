@@ -1,0 +1,29 @@
+{
+  "message": "ai.intermediate.request",
+  "properties": {
+    "args": [
+      "https://api.openai.com/v1/chat/completions"
+    ],
+    "kwargs": {
+      "headers": "null",
+      "json": {
+        "max_tokens": "100",
+        "messages": [
+          {
+            "content": "You are a helpful assistant.\n\nYou MUST use information from the context in your response.",
+            "role": "system"
+          },
+          {
+            "content": "Context: List of submarine and submersible incidents since 2000, Virginia-class submarine, Phantom (2013 film)\n\nUser: Recent events involving submarines",
+            "role": "user"
+          }
+        ],
+        "model": "gpt-3.5-turbo",
+        "stream": "false",
+        "temperature": "0"
+      },
+      "timeout": "null"
+    },
+    "source": "DEMO_REPLAYS"
+  }
+}
