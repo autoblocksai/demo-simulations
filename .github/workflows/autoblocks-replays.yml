@@ -61,7 +61,7 @@ jobs:
 
           # Autoblocks replay view settings
           replay-view-id: clkeamsei0001l908cmjjtqrf
-          replay-num-traces: 1
+          replay-num-traces: 3
 
           # Configuration for filtering and transforming events for replay
           replay-transform-config: |
