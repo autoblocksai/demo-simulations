@@ -2,12 +2,12 @@
   "message": "ai.final.response",
   "properties": {
     "response": {
-      "context": "Fisherman's Wharf, San Francisco, Lombard Street (San Francisco), Tourist attractions in the United States",
-      "response": "San Francisco is known for its numerous tourist attractions that cater to a wide range of interests. One of the most popular areas to visit is Fisherman's Wharf, which offers a vibrant waterfront experience with its seafood restaurants, souvenir shops, and picturesque views of the bay. Lombard Street is another iconic attraction, famous for its steep, winding road that is often referred to as the \"crookedest street in the world.\" Visitors can enjoy walking or driving down this unique street lined with beautiful flowers and",
+      "context": "Fisherman's Wharf, San Francisco, Lombard Street (San Francisco), Chinatown, San Francisco",
+      "response": "San Francisco offers a variety of tourist attractions that cater to different interests. Some popular attractions include Fisherman's Wharf, where you can enjoy fresh seafood, visit the famous Pier 39, and take a boat tour to Alcatraz Island. Lombard Street, known as the \"crookedest street in the world,\" is another must-see spot, with its winding and picturesque road. Chinatown, one of the oldest and largest in the United States, is a vibrant neighborhood where you can",
       "titles": [
         "Fisherman's Wharf, San Francisco",
         "Lombard Street (San Francisco)",
-        "Tourist attractions in the United States"
+        "Chinatown, San Francisco"
       ],
       "tool": "search"
     },
