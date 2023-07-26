@@ -1,0 +1,29 @@
+{
+  "message": "ai.intermediate.request",
+  "properties": {
+    "args": [
+      "https://api.openai.com/v1/chat/completions"
+    ],
+    "kwargs": {
+      "headers": null,
+      "json": {
+        "max_tokens": "100",
+        "messages": [
+          {
+            "content": "You are a helpful assistant.",
+            "role": "system"
+          },
+          {
+            "content": "I had an amazing trip in Maui!",
+            "role": "user"
+          }
+        ],
+        "model": "gpt-3.5-turbo",
+        "stream": "False",
+        "temperature": "0"
+      },
+      "timeout": null
+    },
+    "source": "DEMO_REPLAYS"
+  }
+}
