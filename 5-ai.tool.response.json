@@ -1,0 +1,12 @@
+{
+  "message": "ai.tool.response",
+  "properties": {
+    "context": "List of submarine and submersible incidents since 2000, Virginia-class submarine, Phantom (2013 film)",
+    "source": "DEMO_REPLAYS",
+    "titles": [
+      "List of submarine and submersible incidents since 2000",
+      "Virginia-class submarine",
+      "Phantom (2013 film)"
+    ]
+  }
+}
