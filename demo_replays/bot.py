@@ -37,8 +37,7 @@ def get_response(autoblocks: AutoblocksTracer, query: str) -> str:
 
     ai.client.post = post_wrapper
 
-    # This uses the Wikipedia Search API.
-    # Results from it are nondeterministic, your mileage will vary.
+    # These are tools used by the AI to respond to the user's query
     def search(q: str):
         """Search the internet."""
         autoblocks.send_event(
