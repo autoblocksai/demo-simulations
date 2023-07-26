@@ -5,7 +5,7 @@
       "https://api.openai.com/v1/chat/completions"
     ],
     "kwargs": {
-      "headers": "null",
+      "headers": null,
       "json": {
         "max_tokens": "100",
         "messages": [
@@ -19,10 +19,10 @@
           }
         ],
         "model": "gpt-3.5-turbo",
-        "stream": "false",
+        "stream": "False",
         "temperature": "0"
       },
-      "timeout": "null"
+      "timeout": null
     },
     "source": "DEMO_REPLAYS"
   }
