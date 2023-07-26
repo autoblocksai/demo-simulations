@@ -1,0 +1,25 @@
+{
+  "message": "ai.intermediate.response",
+  "properties": {
+    "response": {
+      "choices": [
+        {
+          "finish_reason": "stop",
+          "index": "0",
+          "message": {
+            "content": "The highest point in the world is Mount Everest, which is located in the Himalayas on the border of Nepal and China. It has an elevation of 8,848.86 meters (29,031.7 feet) above sea level.",
+            "role": "assistant"
+          }
+        }
+      ],
+      "model": "gpt-3.5-turbo-0613",
+      "object": "chat.completion",
+      "usage": {
+        "completion_tokens": "49",
+        "prompt_tokens": "59",
+        "total_tokens": "108"
+      }
+    },
+    "source": "DEMO_REPLAYS"
+  }
+}
