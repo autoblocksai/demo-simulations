@@ -1,0 +1,39 @@
+[tool.poetry]
+name = "demo-replays"
+version = "0.1.0"
+description = ""
+authors = ["Autoblocks Engineering <engineering@autoblocks.ai>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "demo_replays"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+requests = "^2.31.0"
+flask = "^2.3.2"
+pydantic-settings = "^2.0.2"
+simpleaichat = "^0.2.2"
+# autoblocksai = { git = "https://github.com/autoblocksai/python-sdk.git", branch = "v0" }
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^3.3.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 120
+
+[tool.ruff]
+select = ["E", "F", "I001"]
+line-length = 120
+
+[tool.ruff.isort]
+force-single-line = true
+known-first-party = ["demo_replays"]
+
+[tool.poetry.scripts]
+start = "demo_replays.app:start"
+replay = "demo_replays.replay:dynamic"
+replay-static = "demo_replays.replay:static"
