@@ -16,8 +16,8 @@
       "object": "chat.completion",
       "usage": {
         "completion_tokens": "1",
-        "prompt_tokens": "70",
-        "total_tokens": "71"
+        "prompt_tokens": "90",
+        "total_tokens": "91"
       }
     },
     "source": "DEMO_REPLAYS"
