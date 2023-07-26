@@ -1,0 +1,9 @@
+{
+  "message": "request.payload",
+  "properties": {
+    "payload": {
+      "query": "Recent events involving submarines"
+    },
+    "source": "DEMO_REPLAYS"
+  }
+}
