@@ -53,7 +53,7 @@ jobs:
           while [[ "$(curl -s -o /dev/null -w ''%{http_code}'' http://localhost:5000/health)" != "200" ]]; do sleep 1; done
 
       - name: Run Autoblocks replays
-        uses: autoblocksai/actions/replay@comment-on-pr
+        uses: autoblocksai/actions/replay@main
         with:
           # Replay entrypoint settings
           replay-method: POST
