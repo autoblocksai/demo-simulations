@@ -1,0 +1,10 @@
+{
+  "message": "ai.final.response",
+  "properties": {
+    "response": {
+      "response": "That's wonderful to hear! Maui is known for its stunning beaches, beautiful landscapes, and vibrant culture. What were some of the highlights of your trip?",
+      "tool": null
+    },
+    "source": "DEMO_REPLAYS"
+  }
+}
