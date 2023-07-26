@@ -1,0 +1,23 @@
+name: Autoblocks Replays Cleanup
+
+on: delete
+
+permissions:
+  contents: write
+
+jobs:
+  autoblocks-replays-cleanup:
+    if: github.event.ref_type == 'branch'
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          # We need the full history to be able to find and delete branches.
+          fetch-depth: 0
+
+      - name: Delete Autoblocks replay branches for the deleted branch
+        run: |
+          git branch -r --list 'autoblocks-replays/${{ github.event.ref }}' | xargs git push origin --delete
