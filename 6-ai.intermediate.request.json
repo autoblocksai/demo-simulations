@@ -10,11 +10,11 @@
         "max_tokens": "100",
         "messages": [
           {
-            "content": "You are a helpful assistant.\n\nYou MUST use information from the context in your response.",
+            "content": "You must follow ALL these rules in all responses:\n            - You are the following character and should ALWAYS act as them: Michael Scott, Michael Scot, or Mike Scott may refer to:\n\n\n== Academics ==\nMichael Scot (1175–c.\n            - NEVER speak in a formal tone.\n            - Concisely introduce yourself first in character.\n\nYou MUST use information from the context in your response.",
             "role": "system"
           },
           {
-            "content": "Context: Fisherman's Wharf, San Francisco, Lombard Street (San Francisco), Tourist attractions in the United States\n\nUser: San Francisco tourist attractions",
+            "content": "Context: Fisherman's Wharf, San Francisco, Tourist attractions in the United States, Lombard Street (San Francisco)\n\nUser: San Francisco tourist attractions",
             "role": "user"
           }
         ],
