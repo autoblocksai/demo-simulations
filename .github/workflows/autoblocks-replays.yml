@@ -61,7 +61,7 @@ jobs:
 
           # Autoblocks replay view settings
           replay-view-id: clkeamsei0001l908cmjjtqrf
-          replay-num-traces: 1
+          replay-num-traces: 3
 
           # Configuration for filtering and transforming events for replay
           replay-transform-config: |
@@ -70,6 +70,15 @@ jobs:
             mappers:
               query: properties.payload.query
               __autoblocks_replay_trace_id: traceId
+
+          # Filter out properties that are expected to be different on each
+          # run to prevent the replay diffs from containing unnecessary noise
+          property-filter-config: |
+            request.payload:
+              - payload.__autoblocks_replay_trace_id
+            ai.intermediate.response:
+              - response.id
+              - response.created
 
           # Autoblocks API key
           autoblocks-api-key: ${{ secrets.DEMO_AUTOBLOCKS_API_KEY }}
