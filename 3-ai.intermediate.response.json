@@ -12,14 +12,14 @@
           }
         }
       ],
-      "created": "1690385455",
-      "id": "chatcmpl-7galTWAEcyHXBlgRlK5e2SUZE8uSb",
+      "created": "1690387677",
+      "id": "chatcmpl-7gbLJUD2DQuVpQkwrm4MmKwlui9Tr",
       "model": "gpt-3.5-turbo-0613",
       "object": "chat.completion",
       "usage": {
         "completion_tokens": "1",
-        "prompt_tokens": "69",
-        "total_tokens": "70"
+        "prompt_tokens": "70",
+        "total_tokens": "71"
       }
     },
     "source": "DEMO_REPLAYS"
