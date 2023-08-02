@@ -1,0 +1,9 @@
+{
+  "message": "request.payload",
+  "properties": {
+    "payload": {
+      "query": "Alcatraz Island"
+    },
+    "source": "DEMO_REPLAYS"
+  }
+}
