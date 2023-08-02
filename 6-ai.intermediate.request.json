@@ -14,7 +14,7 @@
             "role": "system"
           },
           {
-            "content": "Context: Fisherman's Wharf, San Francisco, Lombard Street (San Francisco), Tourist attractions in the United States\n\nUser: San Francisco tourist attractions",
+            "content": "Context: Fisherman's Wharf, San Francisco, Tourist attractions in the United States, Lombard Street (San Francisco)\n\nUser: San Francisco tourist attractions",
             "role": "user"
           }
         ],
