@@ -1,12 +1,12 @@
 {
   "message": "ai.tool.response",
   "properties": {
-    "context": "Alcatraz Island, Alcatraz Federal Penitentiary, Occupation of Alcatraz",
+    "context": "Alcatraz Island, Alcatraz Federal Penitentiary, June 1962 Alcatraz escape attempt",
     "source": "DEMO_REPLAYS",
     "titles": [
       "Alcatraz Island",
       "Alcatraz Federal Penitentiary",
-      "Occupation of Alcatraz"
+      "June 1962 Alcatraz escape attempt"
     ]
   }
 }
