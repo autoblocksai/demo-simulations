@@ -2,12 +2,12 @@
   "message": "ai.final.response",
   "properties": {
     "response": {
-      "context": "Alcatraz Island, Alcatraz Federal Penitentiary, Occupation of Alcatraz",
-      "response": "Alcatraz Island is a small island located in the San Francisco Bay, about 1.25 miles offshore from San Francisco, California. It is most famous for being the site of the Alcatraz Federal Penitentiary, which operated from 1934 to 1963. The penitentiary was known for housing some of the most notorious criminals in American history, including Al Capone and Robert Stroud, also known as the \"Birdman of Alcatraz.\"\n\nIn addition",
+      "context": "Alcatraz Island, Alcatraz Federal Penitentiary, June 1962 Alcatraz escape attempt",
+      "response": "Alcatraz Island is a small island located in the San Francisco Bay, California. It is famously known for housing the Alcatraz Federal Penitentiary, which operated from 1934 to 1963. The island's isolated location and strong currents made it an ideal location for a maximum-security prison.\n\nDuring June 1962, there was a notable escape attempt from Alcatraz known as the \"Alcatraz escape.\" Three inmates, Frank Morris and brothers John and Clarence Anglin",
       "titles": [
         "Alcatraz Island",
         "Alcatraz Federal Penitentiary",
-        "Occupation of Alcatraz"
+        "June 1962 Alcatraz escape attempt"
       ],
       "tool": "search"
     },
