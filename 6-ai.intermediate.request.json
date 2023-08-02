@@ -14,7 +14,7 @@
             "role": "system"
           },
           {
-            "content": "Context: Alcatraz Island, Alcatraz Federal Penitentiary, Occupation of Alcatraz\n\nUser: Alcatraz Island",
+            "content": "Context: Alcatraz Island, Alcatraz Federal Penitentiary, June 1962 Alcatraz escape attempt\n\nUser: Alcatraz Island",
             "role": "user"
           }
         ],
