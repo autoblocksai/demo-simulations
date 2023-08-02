@@ -4,7 +4,7 @@ import requests
 from autoblocks.replays import replay_events_from_view
 from autoblocks.replays import start_replay
 
-from demo_replays.settings import AUTOBLOCKS_REPLAYS_TRACE_ID_PARAM_NAME
+from demo_replays.settings import AUTOBLOCKS_REPLAY_TRACE_ID_HEADER_NAME
 from demo_replays.settings import env
 
 
@@ -21,7 +21,11 @@ def static():
         ("eiffel", "Eiffel Tower"),
     ]:
         print(f"Testing static event {trace_id} - {query}")
-        requests.post("http://localhost:5000", json={AUTOBLOCKS_REPLAYS_TRACE_ID_PARAM_NAME: trace_id, "query": query})
+        requests.post(
+            "http://localhost:5000",
+            json={"query": query},
+            headers={AUTOBLOCKS_REPLAY_TRACE_ID_HEADER_NAME: trace_id},
+        )
 
 
 def dynamic():
@@ -51,8 +55,9 @@ def dynamic():
             # The original payload
             payload = event.properties["payload"]
 
-            # Modify the payload to pass in the replay trace id
-            payload[AUTOBLOCKS_REPLAYS_TRACE_ID_PARAM_NAME] = event.trace_id
-
             # Replay the request
-            requests.post("http://localhost:5000", json=payload)
+            requests.post(
+                "http://localhost:5000",
+                json=payload,
+                headers={AUTOBLOCKS_REPLAY_TRACE_ID_HEADER_NAME: event.trace_id},
+            )

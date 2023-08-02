@@ -20,4 +20,6 @@ jobs:
 
       - name: Delete Autoblocks replay branches for the deleted branch
         run: |
-          git branch -r --list 'autoblocks-replays/${{ github.event.ref }}/*' | xargs git push origin --delete
+          git branch -r --list 'origin/autoblocks-replays/${{ github.event.ref }}/*' \
+            | sed 's/origin\///' \
+            | xargs git push origin --delete
