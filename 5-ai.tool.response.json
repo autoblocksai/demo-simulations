@@ -1,12 +1,12 @@
 {
   "message": "ai.tool.response",
   "properties": {
-    "context": "Fisherman's Wharf, San Francisco, Lombard Street (San Francisco), Tourist attractions in the United States",
+    "context": "Fisherman's Wharf, San Francisco, Tourist attractions in the United States, Lombard Street (San Francisco)",
     "source": "DEMO_REPLAYS",
     "titles": [
       "Fisherman's Wharf, San Francisco",
-      "Lombard Street (San Francisco)",
-      "Tourist attractions in the United States"
+      "Tourist attractions in the United States",
+      "Lombard Street (San Francisco)"
     ]
   }
 }
