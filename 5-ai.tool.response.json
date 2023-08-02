@@ -1,0 +1,12 @@
+{
+  "message": "ai.tool.response",
+  "properties": {
+    "context": "Alcatraz Island, Alcatraz Federal Penitentiary, Occupation of Alcatraz",
+    "source": "DEMO_REPLAYS",
+    "titles": [
+      "Alcatraz Island",
+      "Alcatraz Federal Penitentiary",
+      "Occupation of Alcatraz"
+    ]
+  }
+}
