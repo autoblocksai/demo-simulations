@@ -2,7 +2,7 @@
 
 This repository demonstrates how to integrate LLM chain replays into your code review process. It contains:
 
-* a [`simpleaichat`](https://github.com/minimaxir/simpleaichat) application that uses the [Autoblocks Python SDK](https://github.com/autoblocksai/python-sdk) to send events to the Autoblocks API
+* a [`simpleaichat`](https://github.com/minimaxir/simpleaichat) application that uses the [Autoblocks Python SDK](https://pypi.org/project/autoblocksai/) to send events to the Autoblocks API
 * a GitHub Actions workflow that **replays** real, past events from end users on every push to a feature branch
 
 With our GitHub integration enabled, your teammates are not only reviewing your code, but also the impact that code will have on your LLM chains, and therefore your end users.
@@ -75,7 +75,7 @@ In another terminal, set the `AUTOBLOCKS_API_KEY` environment variable:
 export AUTOBLOCKS_API_KEY=my-api-key
 ```
 
-Then replay traces from a view:
+Then, replay traces from a view:
 
 ```bash
 poetry run replay --view-id clkeamsei0001l908cmjjtqrf --num-traces 3
