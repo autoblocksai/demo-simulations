@@ -14,13 +14,13 @@
             "role": "system"
           },
           {
-            "content": "Context: List of highest points of European countries, List of elevation extremes by country, List of highest mountains on Earth\n\nUser: Highest points in the world",
+            "content": "Context: List of elevation extremes by country, List of highest points of European countries, List of highest mountains on Earth\n\nUser: Highest points in the world",
             "role": "user"
           }
         ],
         "model": "gpt-3.5-turbo",
         "stream": "false",
-        "temperature": "0"
+        "temperature": "0.5"
       },
       "timeout": "null"
     },
