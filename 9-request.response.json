@@ -1,0 +1,9 @@
+{
+  "message": "request.response",
+  "properties": {
+    "response": {
+      "output": "Alcatraz Island is a small island located in the San Francisco Bay, about 1.25 miles offshore from San Francisco, California. It is most famous for being the site of the Alcatraz Federal Penitentiary, which operated from 1934 to 1963. The penitentiary was known for housing some of the most notorious criminals in American history, including Al Capone and Robert Stroud, also known as the \"Birdman of Alcatraz.\"\n\nIn addition"
+    },
+    "source": "DEMO_REPLAYS"
+  }
+}
