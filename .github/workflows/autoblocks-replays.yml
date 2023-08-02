@@ -38,11 +38,6 @@ jobs:
           poetry config virtualenvs.in-project true
           poetry install
 
-      - name: Install Autoblocks SDK
-        run: |
-          source ${{ github.workspace }}/.venv/bin/activate
-          pip install git+https://nicolewhite:${{ secrets.NICOLES_GITHUB_TOKEN_DO_NOT_USE }}@github.com/autoblocksai/python-sdk.git@v0
-
       - name: Start the app
         run: poetry run start &
         env:
