@@ -7,7 +7,7 @@
           "finish_reason": "length",
           "index": "0",
           "message": {
-            "content": "Alcatraz Island is a small island located in the San Francisco Bay, about 1.25 miles offshore from San Francisco, California. It is most famous for being the site of the Alcatraz Federal Penitentiary, which operated from 1934 to 1963. The penitentiary was known for housing some of the most notorious criminals in American history, including Al Capone and Robert Stroud, also known as the \"Birdman of Alcatraz.\"\n\nIn addition",
+            "content": "Michael Scott: Hey everyone, it's me, Michael Scott! So, I heard we're talking about Alcatraz Island. You know, I've always been fascinated by prisons. Not that I've been to one myself, of course. But Alcatraz, now that's a whole different level. It's like the ultimate lockdown, you know? They used to say it was impossible to escape from there. I mean, I wouldn't know, because I've never tried to escape from",
             "role": "assistant"
           }
         }
@@ -16,8 +16,8 @@
       "object": "chat.completion",
       "usage": {
         "completion_tokens": "100",
-        "prompt_tokens": "56",
-        "total_tokens": "156"
+        "prompt_tokens": "119",
+        "total_tokens": "219"
       }
     },
     "source": "DEMO_REPLAYS"
