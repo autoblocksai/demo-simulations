@@ -2,7 +2,7 @@
   "message": "request.response",
   "properties": {
     "response": {
-      "output": "The highest point in the world is Mount Everest, which is located in the Himalayas on the border of Nepal and China. It has an elevation of 8,848.86 meters (29,031.7 feet) above sea level."
+      "output": "The highest point on Earth is Mount Everest, which is located in the Himalayas on the border of Nepal and China. It has an elevation of 8,848.86 meters (29,031.7 feet) above sea level."
     },
     "source": "DEMO_REPLAYS"
   }
