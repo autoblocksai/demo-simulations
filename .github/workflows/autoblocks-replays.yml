@@ -38,11 +38,6 @@ jobs:
           poetry config virtualenvs.in-project true
           poetry install
 
-      - name: Install Autoblocks SDK
-        run: |
-          source ${{ github.workspace }}/.venv/bin/activate
-          pip install git+https://nicolewhite:${{ secrets.NICOLES_GITHUB_TOKEN_DO_NOT_USE }}@github.com/autoblocksai/python-sdk.git@v0
-
       - name: Start the app
         run: poetry run start &
         env:
@@ -69,13 +64,10 @@ jobs:
               message: request.payload
             mappers:
               query: properties.payload.query
-              __autoblocks_replay_trace_id: traceId
 
           # Filter out properties that are expected to be different on each
           # run to prevent the replay diffs from containing unnecessary noise
           property-filter-config: |
-            request.payload:
-              - payload.__autoblocks_replay_trace_id
             ai.intermediate.response:
               - response.id
               - response.created

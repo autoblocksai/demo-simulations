@@ -1,9 +1,8 @@
 from pydantic_settings import BaseSettings
 
-# A hidden param that is used to override the trace id that would usually
-# be randomly generated for each request with the trace id of the event
-# that is being replayed
-AUTOBLOCKS_REPLAYS_TRACE_ID_PARAM_NAME = "__autoblocks_replay_trace_id"
+# When a request is from a replay, this header contains the trace ID of
+# the event being replayed.
+AUTOBLOCKS_REPLAY_TRACE_ID_HEADER_NAME = "x-autoblocks-replay-trace-id"
 
 
 # Environment variables
