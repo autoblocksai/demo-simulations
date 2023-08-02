@@ -1,6 +1,8 @@
 __pycache__/
 .ruff_cache/
 
+.idea/
+
 *.pyc
 *.DS_Store
 
