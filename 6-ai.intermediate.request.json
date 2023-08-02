@@ -14,7 +14,7 @@
             "role": "system"
           },
           {
-            "content": "Context: List of highest points of European countries, List of elevation extremes by country, List of highest mountains on Earth\n\nUser: Highest points in the world",
+            "content": "Context: List of elevation extremes by country, List of highest points of European countries, List of highest mountains on Earth\n\nUser: Highest points in the world",
             "role": "user"
           }
         ],
