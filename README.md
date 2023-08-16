@@ -63,58 +63,26 @@ Autoblocks would easily surface this change during the code review process:
 
 ## Replaying Locally
 
-Start the application with replays enabled:
+Start the application with your replay ingestion key, a replay id to uniquely identify your replay run, and any other environment variables needed to run your application:
 
 ```bash
-AUTOBLOCKS_REPLAYS_ENABLED=true poetry run start
+AUTOBLOCKS_INGESTION_KEY=<replay-ingestion-key> \
+AUTOBLOCKS_REPLAY_ID=$(date +%Y%m%d%H%M%S) \
+OPENAI_API_KEY=<openai-api-key> \
+poetry run start
 ```
 
-In another terminal, set the `AUTOBLOCKS_API_KEY` environment variable:
+In another terminal, run either:
+
+* `replay-static`, which will replay a static set of test cases against your application
 
 ```bash
-export AUTOBLOCKS_API_KEY=my-api-key
+poetry run replay-static
 ```
 
-Then, replay traces from a view:
+* `replay-dynamic`, which will replay a set of real, past events fetched from the Autoblocks API:
 
 ```bash
-poetry run replay --view-id clkeamsei0001l908cmjjtqrf --num-traces 3
+AUTOBLOCKS_API_KEY=<autoblocks-api-key> \
+poetry run replay-dynamic --view-id clkeamsei0001l908cmjjtqrf --num-traces 3
 ```
-
-```
-Your replay id is 2023-07-23_09-36-36
-
-Replaying event {'id': 'geepag24zence2kbe0ppagt9', 'traceId': '7cb3ec98-b320-4e62-9a51-b15d0218ae4c', 'timestamp': '2023-07-22T18:32:51.862Z', 'message': 'request.payload', 'properties': {'payload': {'query': 'What are all of the airports in London?'}, 'source': 'DEMO_REPLAYS'}}
-```
-
-The original and replayed traces are written to the `autoblocks-replays/` folder with the structure:
-
-```
-autoblocks-replays/
-    <replay-id>/
-        <trace-id>/
-            original/
-                <event-number>-<message>.json
-            replayed/
-                <event-number>-<message>.json
-```
-
-<img width="981" alt="Screenshot 2023-07-23 at 10 06 39 AM" src="https://github.com/autoblocksai/actions/assets/7498009/ce20918f-ce75-4cd3-a5d2-66d3e1a00914">
-
-Inspect the original vs replayed output manually or use a CLI tool like `diff` to surface differences:
-
-```
-diff \
-  autoblocks-replays/2023-07-23_09-36-36/7cb3ec98-b320-4e62-9a51-b15d0218ae4c/original \
-  autoblocks-replays/2023-07-23_09-36-36/7cb3ec98-b320-4e62-9a51-b15d0218ae4c/replayed
-```
-
-<img width="799" alt="Screenshot 2023-07-22 at 2 39 47 PM" src="https://github.com/autoblocksai/actions/assets/7498009/4279db15-26fc-4346-8e16-1ed060bcd9f7">
-
-## Replaying in GitHub Actions
-
-Use the [`autoblocksai/actions/replay`](https://github.com/autoblocksai/actions/tree/main/replay) action to replay events in a GitHub Actions workflow. This is similar to replaying events locally but allows you to automate replays in your CI workflow and view results in the GitHub UI.
-
-The action will leave a comment on your pull request with a summary of the replay results:
-
-<img width="857" alt="Screenshot 2023-07-26 at 6 50 31 PM" src="https://github.com/autoblocksai/actions/assets/7498009/ebfb31da-af70-45bf-b9b5-5e640a4fa104">
