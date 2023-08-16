@@ -12,10 +12,10 @@ def static():
     Replays a static set of events against the locally-running app.
     """
     for trace_id, query in [
-        ("sf", "San Francisco tourist attractions"),
-        ("paris", "Paris tourist attractions"),
-        ("lombard", "Lombard Street"),
-        ("eiffel", "Eiffel Tower"),
+        ("san-francisco-tourist-attractions", "San Francisco tourist attractions"),
+        ("paris-tourist-attractions", "Paris tourist attractions"),
+        ("lombard-stree", "Lombard Street"),
+        ("eiffel-tower", "Eiffel Tower"),
     ]:
         print(f"Testing static event {trace_id} - {query}")
         requests.post(

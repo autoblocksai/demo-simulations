@@ -37,8 +37,8 @@ jobs:
         run: |
           while [[ "$(curl -s -o /dev/null -w ''%{http_code}'' http://localhost:5000/health)" != "200" ]]; do sleep 1; done
 
-#      - name: Run static replays
-#        run: poetry run replay-static
+      - name: Run static replays
+        run: poetry run replay-static
 
       - name: Run dynamic replays
         run: poetry run replay-dynamic --view-id clkeamsei0001l908cmjjtqrf --num-traces 3
