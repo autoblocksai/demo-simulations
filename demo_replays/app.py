@@ -29,7 +29,9 @@ def main():
     trace_id = request.headers.get(AUTOBLOCKS_REPLAY_TRACE_ID_HEADER_NAME) or str(uuid.uuid4())
 
     autoblocks = AutoblocksTracer(
-        env.AUTOBLOCKS_INGESTION_KEY, trace_id=trace_id, properties=dict(source="DEMO_REPLAYS")
+        env.AUTOBLOCKS_INGESTION_KEY,
+        trace_id=trace_id,
+        properties=dict(source="DEMO_REPLAYS"),
     )
     autoblocks.send_event("request.payload", properties=dict(payload=payload))
 

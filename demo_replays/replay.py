@@ -1,8 +1,7 @@
 import argparse
 
 import requests
-from autoblocks.replays import replay_events_from_view
-from autoblocks.replays import start_replay
+from autoblocks.api.client import AutoblocksAPIClient
 
 from demo_replays.settings import AUTOBLOCKS_REPLAY_TRACE_ID_HEADER_NAME
 from demo_replays.settings import env
@@ -12,13 +11,11 @@ def static():
     """
     Replays a static set of events against the locally-running app.
     """
-    start_replay()
-
     for trace_id, query in [
-        ("sf", "San Francisco tourist attractions"),
-        ("paris", "Paris tourist attractions"),
-        ("lombard", "Lombard Street"),
-        ("eiffel", "Eiffel Tower"),
+        ("san-francisco-tourist-attractions", "San Francisco tourist attractions"),
+        ("paris-tourist-attractions", "Paris tourist attractions"),
+        ("lombard-stree", "Lombard Street"),
+        ("eiffel-tower", "Eiffel Tower"),
     ]:
         print(f"Testing static event {trace_id} - {query}")
         requests.post(
@@ -42,22 +39,20 @@ def dynamic():
     )
     args = parser.parse_args()
 
-    start_replay()
+    ab_client = AutoblocksAPIClient(env.AUTOBLOCKS_API_KEY)
 
-    for event in replay_events_from_view(
-        api_key=env.AUTOBLOCKS_API_KEY,
-        view_id=args.view_id,
-        num_traces=args.num_traces,
-    ):
-        if event.message == "request.payload":
-            print(f"Replaying past event {event}")
+    resp = ab_client.get_traces_from_view(view_id=args.view_id, page_size=args.num_traces)
+    for trace in resp.traces:
+        for event in trace.events:
+            if event.message == "request.payload":
+                print(f"Replaying past event {event}")
 
-            # The original payload
-            payload = event.properties["payload"]
+                # The original payload
+                payload = event.properties["payload"]
 
-            # Replay the request
-            requests.post(
-                "http://localhost:5000",
-                json=payload,
-                headers={AUTOBLOCKS_REPLAY_TRACE_ID_HEADER_NAME: event.trace_id},
-            )
+                # Replay the request
+                requests.post(
+                    "http://localhost:5000",
+                    json=payload,
+                    headers={AUTOBLOCKS_REPLAY_TRACE_ID_HEADER_NAME: event.trace_id},
+                )

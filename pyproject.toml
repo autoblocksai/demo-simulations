@@ -13,7 +13,7 @@ requests = "^2.31.0"
 flask = "^2.3.2"
 pydantic-settings = "^2.0.2"
 simpleaichat = "^0.2.2"
-autoblocksai = "^0.0.1"
+autoblocksai = "0.0.2"
 
 [tool.poetry.group.dev.dependencies]
 pre-commit = "^3.3.3"
@@ -35,5 +35,5 @@ known-first-party = ["demo_replays"]
 
 [tool.poetry.scripts]
 start = "demo_replays.app:start"
-replay = "demo_replays.replay:dynamic"
 replay-static = "demo_replays.replay:static"
+replay-dynamic = "demo_replays.replay:dynamic"
