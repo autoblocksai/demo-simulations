@@ -14,7 +14,7 @@ def static():
     for trace_id, query in [
         ("san-francisco-tourist-attractions", "San Francisco tourist attractions"),
         ("paris-tourist-attractions", "Paris tourist attractions"),
-        ("lombard-stree", "Lombard Street"),
+        ("lombard-street", "Lombard Street"),
         ("eiffel-tower", "Eiffel Tower"),
     ]:
         print(f"Testing static event {trace_id} - {query}")

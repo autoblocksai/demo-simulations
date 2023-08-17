@@ -13,6 +13,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
+
       - name: Set up Python ${{ env.PYTHON_VERSION }}
         uses: actions/setup-python@v4
         with:
@@ -45,3 +50,6 @@ jobs:
         env:
           # Dynamic replays are fetched from the Autoblocks API
           AUTOBLOCKS_API_KEY: ${{ secrets.DEMO_AUTOBLOCKS_API_KEY }}
+
+      - name: Show log file
+        run: cat flask.log
