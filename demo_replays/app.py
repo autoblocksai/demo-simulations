@@ -44,4 +44,7 @@ def main():
 
 
 def start():
+    import logging
+
+    logging.basicConfig(filename="flask.log", level=logging.DEBUG)
     app.run(debug=True)
