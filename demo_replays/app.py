@@ -6,6 +6,7 @@ from flask import request
 
 from demo_replays import bot
 from demo_replays.settings import AUTOBLOCKS_REPLAY_TRACE_ID_HEADER_NAME
+from demo_replays.settings import REQUEST_PAYLOAD_MESSAGE
 from demo_replays.settings import env
 
 app = Flask(__name__)
@@ -33,7 +34,7 @@ def main():
         trace_id=trace_id,
         properties=dict(source="DEMO_REPLAYS"),
     )
-    autoblocks.send_event("request.payload", properties=dict(payload=payload))
+    autoblocks.send_event(REQUEST_PAYLOAD_MESSAGE, properties=dict(payload=payload))
 
     output = bot.get_response(autoblocks, query)
 
