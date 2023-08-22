@@ -4,6 +4,10 @@ from pydantic_settings import BaseSettings
 # the event being replayed.
 AUTOBLOCKS_REPLAY_TRACE_ID_HEADER_NAME = "x-autoblocks-replay-trace-id"
 
+# The message for the request.payload event, pulled into a variable here
+# so that it's kept in sync between sending the events and replaying them.
+REQUEST_PAYLOAD_MESSAGE = "request.payload"
+
 
 # Environment variables
 class Env(BaseSettings):
