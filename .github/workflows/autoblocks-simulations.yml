@@ -1,13 +1,16 @@
-name: Autoblocks Replays
+name: Autoblocks Simulations
 
-on: push
+on:
+  push:
+  schedule:
+    - cron: "17 12 * * *"
 
 env:
   POETRY_VERSION: "1.5.1"
   PYTHON_VERSION: "3.11"
 
 jobs:
-  autoblocks-replays:
+  autoblocks-simulations:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -32,8 +35,8 @@ jobs:
       - name: Start the app
         run: poetry run start &
         env:
-          # Use the replay ingestion key so that Autoblocks knows we're sending replayed events
-          AUTOBLOCKS_INGESTION_KEY: ${{ secrets.DEMO_AUTOBLOCKS_REPLAY_INGESTION_KEY }}
+          # Use the simulation ingestion key so that Autoblocks knows we're sending simulated events
+          AUTOBLOCKS_INGESTION_KEY: ${{ secrets.AUTOBLOCKS_SIMULATION_INGESTION_KEY }}
 
           # Any other environment variables the application needs to run
           OPENAI_API_KEY: ${{ secrets.DEMO_OPENAI_API_KEY }}
@@ -42,14 +45,12 @@ jobs:
         run: |
           while [[ "$(curl -s -o /dev/null -w ''%{http_code}'' http://localhost:5000/health)" != "200" ]]; do sleep 1; done
 
-     - name: Run static replays
-       run: poetry run replay-static
+      - name: Run simulation with static test cases
+        run: poetry run simulation-static
 
-      - name: Run dynamic replays
-        run: poetry run replay-dynamic
+      - name: Run simulation with production test cases
+        run: poetry run simulation-production-replay
         env:
-          # Dynamic replays are fetched from the Autoblocks API
+          # Production events are fetched from the Autoblocks API,
+          # so we need the API key to authenticate
           AUTOBLOCKS_API_KEY: ${{ secrets.DEMO_AUTOBLOCKS_API_KEY }}
-
-      - name: Show log file
-        run: cat flask.log
