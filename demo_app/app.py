@@ -1,13 +1,10 @@
 import uuid
 
-from autoblocks.tracer import AutoblocksTracer
 from flask import Flask
 from flask import request
 
 from demo_app import bot
 from demo_app.settings import AUTOBLOCKS_SIMULATION_TRACE_ID_HEADER_NAME
-from demo_app.settings import REQUEST_PAYLOAD_MESSAGE
-from demo_app.settings import env
 
 app = Flask(__name__)
 
@@ -29,19 +26,9 @@ def main():
     # but in a simulation scenario we use the trace id passed in via the simulation trace id header
     trace_id = request.headers.get(AUTOBLOCKS_SIMULATION_TRACE_ID_HEADER_NAME) or str(uuid.uuid4())
 
-    autoblocks = AutoblocksTracer(
-        env.AUTOBLOCKS_INGESTION_KEY,
-        trace_id=trace_id,
-        properties=dict(source="DEMO_SIMULATIONS"),
-    )
-    autoblocks.send_event(REQUEST_PAYLOAD_MESSAGE, properties=dict(payload=payload))
+    output = bot.get_response(trace_id, query)
 
-    output = bot.get_response(autoblocks, query)
-
-    response = {"output": output}
-    autoblocks.send_event("request.response", properties=dict(response=response))
-
-    return response
+    return dict(output=output)
 
 
 def start():

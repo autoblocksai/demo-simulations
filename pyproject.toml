@@ -13,10 +13,11 @@ requests = "^2.31.0"
 flask = "^2.3.2"
 pydantic-settings = "^2.0.2"
 simpleaichat = "^0.2.2"
-autoblocksai = "0.0.6"
+autoblocksai = "0.0.7"
 
 [tool.poetry.group.dev.dependencies]
 pre-commit = "^3.3.3"
+pytest = "^7.4.0"
 
 [build-system]
 requires = ["poetry-core"]
@@ -35,5 +36,4 @@ known-first-party = ["demo_app"]
 
 [tool.poetry.scripts]
 start = "demo_app.app:start"
-simulation-static = "demo_app.simulations:static"
 simulation-production-replay = "demo_app.simulations:production_replay"

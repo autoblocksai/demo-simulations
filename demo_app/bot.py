@@ -6,7 +6,13 @@ from simpleaichat.utils import wikipedia_search_lookup
 from demo_app.settings import env
 
 
-def get_response(autoblocks: AutoblocksTracer, query: str) -> str:
+def get_response(trace_id: str, query: str) -> str:
+    autoblocks = AutoblocksTracer(
+        env.AUTOBLOCKS_INGESTION_KEY,
+        trace_id=trace_id,
+        properties=dict(source="DEMO_SIMULATIONS"),
+    )
+
     ai = AIChat(
         api_key=env.OPENAI_API_KEY,
         model="gpt-3.5-turbo",
