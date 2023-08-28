@@ -53,4 +53,4 @@ jobs:
         env:
           # Production events are fetched from the Autoblocks API,
           # so we need the API key to authenticate
-          AUTOBLOCKS_API_KEY: ${{ secrets.DEMO_AUTOBLOCKS_API_KEY }}
+          AUTOBLOCKS_API_KEY: ${{ secrets.AUTOBLOCKS_API_KEY }}
