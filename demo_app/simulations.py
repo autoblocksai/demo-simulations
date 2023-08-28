@@ -7,14 +7,14 @@ from autoblocks.api.models import SystemEventFilterKey
 from autoblocks.api.models import TraceFilter
 from autoblocks.api.models import TraceFilterOperator
 
-from demo_replays.settings import AUTOBLOCKS_REPLAY_TRACE_ID_HEADER_NAME
-from demo_replays.settings import REQUEST_PAYLOAD_MESSAGE
-from demo_replays.settings import env
+from demo_app.settings import AUTOBLOCKS_SIMULATION_TRACE_ID_HEADER_NAME
+from demo_app.settings import REQUEST_PAYLOAD_MESSAGE
+from demo_app.settings import env
 
 
 def static():
     """
-    Replays a static set of events against the locally-running app.
+    Test a static set of events against the locally-running app.
     """
     for trace_id, query in [
         ("san-francisco-tourist-attractions", "San Francisco tourist attractions"),
@@ -26,13 +26,13 @@ def static():
         requests.post(
             "http://localhost:5000",
             json={"query": query},
-            headers={AUTOBLOCKS_REPLAY_TRACE_ID_HEADER_NAME: trace_id},
+            headers={AUTOBLOCKS_SIMULATION_TRACE_ID_HEADER_NAME: trace_id},
         )
 
 
-def dynamic():
+def production_replay():
     """
-    Replays a dynamic set of events fetched from the Autoblocks API against the locally-running app.
+    Replays production events fetched from the Autoblocks API against the locally-running app.
     """
     ab_client = AutoblocksAPIClient(env.AUTOBLOCKS_API_KEY)
 
@@ -64,5 +64,5 @@ def dynamic():
                 requests.post(
                     "http://localhost:5000",
                     json=payload,
-                    headers={AUTOBLOCKS_REPLAY_TRACE_ID_HEADER_NAME: event.trace_id},
+                    headers={AUTOBLOCKS_SIMULATION_TRACE_ID_HEADER_NAME: event.trace_id},
                 )

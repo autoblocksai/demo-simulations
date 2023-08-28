@@ -1,11 +1,11 @@
 [tool.poetry]
-name = "demo-replays"
+name = "demo-simulations"
 version = "0.1.0"
 description = ""
 authors = ["Autoblocks Engineering <engineering@autoblocks.ai>"]
 license = "MIT"
 readme = "README.md"
-packages = [{include = "demo_replays"}]
+packages = [{include = "demo_app"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
@@ -31,9 +31,9 @@ line-length = 120
 
 [tool.ruff.isort]
 force-single-line = true
-known-first-party = ["demo_replays"]
+known-first-party = ["demo_app"]
 
 [tool.poetry.scripts]
-start = "demo_replays.app:start"
-replay-static = "demo_replays.replay:static"
-replay-dynamic = "demo_replays.replay:dynamic"
+start = "demo_app.app:start"
+simulation-static = "demo_app.simulations:static"
+simulation-production-replay = "demo_app.simulations:production_replay"

@@ -3,7 +3,7 @@ from simpleaichat import AIChat
 from simpleaichat.utils import wikipedia_search
 from simpleaichat.utils import wikipedia_search_lookup
 
-from demo_replays.settings import env
+from demo_app.settings import env
 
 
 def get_response(autoblocks: AutoblocksTracer, query: str) -> str:
