@@ -4,9 +4,9 @@ from pydantic_settings import BaseSettings
 # the event being handled during the simulation.
 AUTOBLOCKS_SIMULATION_TRACE_ID_HEADER_NAME = "x-autoblocks-simulation-trace-id"
 
-# The message for the request.payload event, pulled into a variable here
+# The message for the user input event, pulled into a variable here
 # so that it's kept in sync between sending the events and replaying them.
-REQUEST_PAYLOAD_MESSAGE = "request.payload"
+USER_QUERY_MESSAGE = "user.query"
 
 
 # Environment variables

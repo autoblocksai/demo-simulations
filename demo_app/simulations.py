@@ -8,26 +8,8 @@ from autoblocks.api.models import TraceFilter
 from autoblocks.api.models import TraceFilterOperator
 
 from demo_app.settings import AUTOBLOCKS_SIMULATION_TRACE_ID_HEADER_NAME
-from demo_app.settings import REQUEST_PAYLOAD_MESSAGE
+from demo_app.settings import USER_QUERY_MESSAGE
 from demo_app.settings import env
-
-
-def static():
-    """
-    Test a static set of events against the locally-running app.
-    """
-    for trace_id, query in [
-        ("san-francisco-tourist-attractions", "San Francisco tourist attractions"),
-        ("paris-tourist-attractions", "Paris tourist attractions"),
-        ("lombard-street", "Lombard Street"),
-        ("eiffel-tower", "Eiffel Tower"),
-    ]:
-        print(f"Testing static event {trace_id} - {query}")
-        requests.post(
-            "http://localhost:5000",
-            json={"query": query},
-            headers={AUTOBLOCKS_SIMULATION_TRACE_ID_HEADER_NAME: trace_id},
-        )
 
 
 def production_replay():
@@ -46,7 +28,7 @@ def production_replay():
                     EventFilter(
                         key=SystemEventFilterKey.MESSAGE,
                         operator=EventFilterOperator.EQUALS,
-                        value=REQUEST_PAYLOAD_MESSAGE,
+                        value=USER_QUERY_MESSAGE,
                     ),
                 ],
             ),
@@ -54,7 +36,7 @@ def production_replay():
     )
     for trace in page.traces:
         for event in trace.events:
-            if event.message == REQUEST_PAYLOAD_MESSAGE:
+            if event.message == USER_QUERY_MESSAGE:
                 print(f"Replaying past event {event}")
 
                 # The original payload

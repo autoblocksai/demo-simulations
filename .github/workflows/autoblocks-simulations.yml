@@ -9,6 +9,12 @@ env:
   POETRY_VERSION: "1.5.1"
   PYTHON_VERSION: "3.11"
 
+  # Use the simulation ingestion key so that Autoblocks knows we're sending simulated events
+  AUTOBLOCKS_INGESTION_KEY: ${{ secrets.AUTOBLOCKS_SIMULATION_INGESTION_KEY }}
+
+  # Any other environment variables the application needs to run
+  OPENAI_API_KEY: ${{ secrets.DEMO_OPENAI_API_KEY }}
+
 jobs:
   autoblocks-simulations:
     runs-on: ubuntu-latest
@@ -32,25 +38,19 @@ jobs:
       - name: Install dependencies
         run: poetry install
 
+      - name: Run tests
+        run: poetry run pytest
+
       - name: Start the app
         run: poetry run start &
-        env:
-          # Use the simulation ingestion key so that Autoblocks knows we're sending simulated events
-          AUTOBLOCKS_INGESTION_KEY: ${{ secrets.AUTOBLOCKS_SIMULATION_INGESTION_KEY }}
-
-          # Any other environment variables the application needs to run
-          OPENAI_API_KEY: ${{ secrets.DEMO_OPENAI_API_KEY }}
 
       - name: Wait for the app to be ready
         run: |
           while [[ "$(curl -s -o /dev/null -w ''%{http_code}'' http://localhost:5000/health)" != "200" ]]; do sleep 1; done
 
-      - name: Run simulation with static test cases
-        run: poetry run simulation-static
-
       - name: Run simulation with production test cases
         run: poetry run simulation-production-replay
         env:
           # Production events are fetched from the Autoblocks API,
-          # so we need the API key to authenticate
+          # so we need the API key to authenticate.
           AUTOBLOCKS_API_KEY: ${{ secrets.AUTOBLOCKS_API_KEY }}

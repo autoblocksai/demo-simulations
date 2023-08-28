@@ -4,7 +4,7 @@ This repository contains an example project that integrates Autoblocks Simulatio
 via GitHub Actions.
 See the [documentation](https://docs.autoblocks.ai/guides/simulations) for more information.
 
-## Instructions
+## Instructions for running locally
 
 ### 1. Install dependencies
 
@@ -12,11 +12,22 @@ See the [documentation](https://docs.autoblocks.ai/guides/simulations) for more 
 poetry install
 ```
 
-### 2. Start the application
+### 2. Run the tests
 
-Start the application with your simulation ingestion key,
-a simulation id to uniquely identify your simulation run,
-and any other environment variables needed to run your application:
+Set the `AUTOBLOCKS_INGESTION_KEY` environment variable to your simulation ingestion key before running the tests
+so that any events sent during the test run are sent as simulated events.
+
+```bash
+AUTOBLOCKS_INGESTION_KEY=<simulation-ingestion-key> \
+OPENAI_API_KEY=<openai-api-key> \
+poetry run pytest
+```
+
+[View your simulation](https://app.autoblocks.ai/simulations)
+
+### 3. Run a simulation with production events
+
+To run a simulation that replays production events, first start the application:
 
 ```bash
 AUTOBLOCKS_INGESTION_KEY=<simulation-ingestion-key> \
@@ -25,18 +36,10 @@ OPENAI_API_KEY=<openai-api-key> \
 poetry run start
 ```
 
-### 3. Run the simulation
-
-In another terminal, run either:
-
-* `simulation-static`, which will replay a static set of test cases against your application:
-
-```bash
-poetry run simulation-static
-```
-
-* `simulation-production-replay`, which will replay a set of production events fetched from the Autoblocks API:
+Then, in a separate terminal, run the simulation:
 
 ```bash
 AUTOBLOCKS_API_KEY=<autoblocks-api-key> poetry run simulation-production-replay
 ```
+
+[View your simulation](https://app.autoblocks.ai/simulations)
