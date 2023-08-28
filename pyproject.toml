@@ -5,7 +5,7 @@ description = ""
 authors = ["Autoblocks Engineering <engineering@autoblocks.ai>"]
 license = "MIT"
 readme = "README.md"
-packages = [{include = "demo_replays"}]
+packages = [{include = "demo_app"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
